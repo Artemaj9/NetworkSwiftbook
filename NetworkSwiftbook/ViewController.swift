@@ -10,31 +10,28 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var photoImageView: UIImageView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
+    
+    private let networkManager = NetworkManager.shared
+    
     @IBAction func showNextAction(_ sender: Any) {
-        fetchImage()
+        fetchImage(key: "sea")
     }
 }
 
 // Networking
 extension ViewController {
-    func fetchImage() {
-        guard let url = URL(string: "https://loremflickr.com/320/320") else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error  in
+    private func fetchImage(key: String) {
+        guard let url = URL(string: "https://loremflickr.com/320/320/\(key)") else { return }
+        networkManager.downloadData(from: url) { data in
+            guard let data else { return }
             
-            guard let data, error == nil else { return }
             let image = UIImage(data: data)
             
             DispatchQueue.main.async { [weak self] in
                 self?.photoImageView.image = image
             }
         }
-        .resume()
+
     }
 }
 
