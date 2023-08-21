@@ -56,24 +56,25 @@ extension UsersListViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "user") else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell") as? UserTableViewCell else { return UITableViewCell() }
         // Оформляем cell
         // Находим пользователя
-        let user = users[indexPath.row]
+        cell.configure(with: users[indexPath.row])
+//        let user = users[indexPath.row]
         
         //Создаем cell content
-        var content = cell.defaultContentConfiguration()
-        content.text = user.firstName
-        content.secondaryText = user.lastName
-        
-        content.image = UIImage(systemName: "face.smiling")
-        
-        cell.contentConfiguration = content
-        networkManager.fetchAvatar(from: user.avatar) { imageData in
-            content.image = UIImage(data: imageData)
-            content.imageProperties.cornerRadius = tableView.rowHeight / 2
-            cell.contentConfiguration = content
-        }
+//        var content = cell.defaultContentConfiguration()
+//        content.text = user.firstName
+//        content.secondaryText = user.lastName
+//
+//        content.image = UIImage(systemName: "face.smiling")
+//
+//        cell.contentConfiguration = content
+//        networkManager.fetchAvatar(from: user.avatar) { imageData in
+//            content.image = UIImage(data: imageData)
+//            content.imageProperties.cornerRadius = tableView.rowHeight / 2
+//            cell.contentConfiguration = content
+//        }
         
         return cell
     }

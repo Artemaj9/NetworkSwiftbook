@@ -16,6 +16,8 @@
 		AC0EE3EC2A93CFCB00197D9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0EE3EB2A93CFCB00197D9B /* User.swift */; };
 		AC0EE3EE2A93D21F00197D9B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0EE3ED2A93D21F00197D9B /* NetworkManager.swift */; };
 		AC0EE3F12A93F78300197D9B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0EE3F02A93F78300197D9B /* UserViewController.swift */; };
+		AC0EE3F42A94046000197D9B /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0EE3F32A94046000197D9B /* UserTableViewCell.swift */; };
+		AC0EE3F72A9406E000197D9B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AC0EE3F62A9406E000197D9B /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,7 @@
 		AC0EE3EB2A93CFCB00197D9B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../../NetworkSwiftbook/User.swift; sourceTree = "<group>"; };
 		AC0EE3ED2A93D21F00197D9B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AC0EE3F02A93F78300197D9B /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		AC0EE3F32A94046000197D9B /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC0EE3F72A9406E000197D9B /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +92,7 @@
 			children = (
 				AC0EE3F02A93F78300197D9B /* UserViewController.swift */,
 				AC0EE3E92A93CEFD00197D9B /* UserListViewController.swift */,
+				AC0EE3F32A94046000197D9B /* UserTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -108,6 +113,9 @@
 			dependencies = (
 			);
 			name = TableNetworking;
+			packageProductDependencies = (
+				AC0EE3F62A9406E000197D9B /* Kingfisher */,
+			);
 			productName = TableNetworking;
 			productReference = AC0EE3D22A93CDDC00197D9B /* TableNetworking.app */;
 			productType = "com.apple.product-type.application";
@@ -136,6 +144,9 @@
 				Base,
 			);
 			mainGroup = AC0EE3C92A93CDDC00197D9B;
+			packageReferences = (
+				AC0EE3F52A9406E000197D9B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = AC0EE3D32A93CDDC00197D9B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -165,6 +176,7 @@
 			files = (
 				AC0EE3EC2A93CFCB00197D9B /* User.swift in Sources */,
 				AC0EE3F12A93F78300197D9B /* UserViewController.swift in Sources */,
+				AC0EE3F42A94046000197D9B /* UserTableViewCell.swift in Sources */,
 				AC0EE3D62A93CDDC00197D9B /* AppDelegate.swift in Sources */,
 				AC0EE3EE2A93D21F00197D9B /* NetworkManager.swift in Sources */,
 				AC0EE3D82A93CDDC00197D9B /* SceneDelegate.swift in Sources */,
@@ -386,6 +398,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AC0EE3F52A9406E000197D9B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AC0EE3F62A9406E000197D9B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC0EE3F52A9406E000197D9B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AC0EE3CA2A93CDDC00197D9B /* Project object */;
 }

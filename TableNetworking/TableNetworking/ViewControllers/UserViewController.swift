@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class UserViewController: UIViewController {
     
@@ -22,8 +23,9 @@ final class UserViewController: UIViewController {
     
     private func composeUser(_ user: User) {
         nameLabel.text = "\(user.firstName) \(user.lastName)"
-        networkManager.fetchAvatar(from: user.avatar) { [weak self] imageDate in
-            self?.avatarImageView.image = UIImage(data: imageDate)
-        }
+//        networkManager.fetchAvatar(from: user.avatar) { [weak self] imageDate in
+//            self?.avatarImageView.image = UIImage(data: imageDate)
+//        }
+        avatarImageView.kf.setImage(with: user.avatar)
     }
 }

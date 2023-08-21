@@ -12,19 +12,46 @@
         <scene sceneID="6hI-qb-9l8">
             <objects>
                 <tableViewController id="9ft-3v-kJG" customClass="UsersListViewController" customModule="TableNetworking" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="hJL-HP-f3z">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="hJL-HP-f3z">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="user" id="lm3-Tp-pR9" customClass="User">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" id="lm3-Tp-pR9" customClass="UserTableViewCell" customModule="TableNetworking" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lm3-Tp-pR9" id="LjZ-P5-iGU">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GH3-Uy-Zxx">
+                                            <rect key="frame" x="0.0" y="4" width="72" height="72"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="GH3-Uy-Zxx" secondAttribute="height" multiplier="1:1" id="hpz-Vi-FZP"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEE-w2-dvZ">
+                                            <rect key="frame" x="80" y="30" width="277" height="20"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GH3-Uy-Zxx" firstAttribute="centerY" secondItem="LjZ-P5-iGU" secondAttribute="centerY" id="GVd-lJ-fFd"/>
+                                        <constraint firstItem="uEE-w2-dvZ" firstAttribute="centerY" secondItem="GH3-Uy-Zxx" secondAttribute="centerY" id="TXe-p8-iUj"/>
+                                        <constraint firstItem="uEE-w2-dvZ" firstAttribute="top" secondItem="LjZ-P5-iGU" secondAttribute="topMargin" constant="19" id="acb-nV-bLN"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uEE-w2-dvZ" secondAttribute="trailing" constant="16" id="brT-Ql-IHh"/>
+                                        <constraint firstItem="uEE-w2-dvZ" firstAttribute="leading" secondItem="GH3-Uy-Zxx" secondAttribute="trailing" constant="8" id="h0J-hm-5Qt"/>
+                                        <constraint firstItem="GH3-Uy-Zxx" firstAttribute="leading" secondItem="LjZ-P5-iGU" secondAttribute="leading" constant="8" id="pua-oy-lbQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="GH3-Uy-Zxx" secondAttribute="bottom" constant="4" id="qzR-t1-vbf"/>
+                                        <constraint firstItem="GH3-Uy-Zxx" firstAttribute="top" secondItem="LjZ-P5-iGU" secondAttribute="top" constant="4" id="rz4-Fu-f2H"/>
+                                        <constraint firstItem="GH3-Uy-Zxx" firstAttribute="leading" secondItem="LjZ-P5-iGU" secondAttribute="leading" id="zpp-lA-bsJ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="avatarImageView" destination="GH3-Uy-Zxx" id="XgV-1S-xCZ"/>
+                                    <outlet property="nameLabel" destination="uEE-w2-dvZ" id="Bnp-JL-nMi"/>
                                     <segue destination="85Z-Ir-ccO" kind="show" id="OvZ-Ds-IJu"/>
                                 </connections>
                             </tableViewCell>
